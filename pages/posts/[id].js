@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/blogpost";
 import Head from "next/head";
-import Date from "../components/dates";
+//import Date from "../components/dates";
 import utilStyle from "../../styles/utils.module.css";
 export default function Post({ postData }) {
   // postData is an object return from the function getPostData which takes an id
@@ -16,7 +16,7 @@ export default function Post({ postData }) {
       <br />
       post Title: {postData.title}
       <br />
-      post Date: <Date dateString={postData.date} />
+      post Date: {postData.date}
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.htmlContent }}></div>
     </Layout>

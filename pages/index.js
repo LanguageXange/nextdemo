@@ -4,7 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Layout, { siteTitle } from "./components/layout";
 import { getSortedPostsData } from "../lib/blogpost";
-import Date from "./components/dates";
+//import Date from "./components/dates";
 export default function Home({ postData }) {
   return (
     <Layout home>
@@ -27,9 +27,7 @@ export default function Home({ postData }) {
               <li className={utilStyles.listItem} key={id}>
                 {title}
                 <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
+                <small className={utilStyles.lightText}>{date}</small>
               </li>
             </Link>
           ))}
