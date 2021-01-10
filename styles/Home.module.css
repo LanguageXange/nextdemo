@@ -1,3 +1,14 @@
+.testlayout {
+  background-color: #81b4eeb2;
+  width: 1200px;
+  border: 2px solid black;
+  margin: 20px auto;
+}
+.foo {
+  border: 2px solid black;
+  margin: 15px;
+  background-color: pink;
+}
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -35,7 +46,7 @@
   align-items: center;
 }
 
-.title a {
+.title {
   color: #0070f3;
   text-decoration: none;
 }
