@@ -1,8 +1,8 @@
-import Layout from "./components/layout";
-import { getAllPostIds, getPostData } from "../lib/blogpost";
+import Layout from "../components/layout";
+import { getAllPostIds, getPostData } from "../../lib/blogpost";
 import Head from "next/head";
-import Date from "./components/dates";
-import utilStyle from "../styles/utils.module.css";
+import Date from "../components/dates";
+import utilStyle from "../../styles/utils.module.css";
 export default function Post({ postData }) {
   // postData is an object return from the function getPostData which takes an id
 

@@ -23,7 +23,7 @@ export default function Home({ postData }) {
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {postData.map(({ id, date, title }) => (
-            <Link href={`http://localhost:3000/${id}`} key={id}>
+            <Link href={`http://localhost:3000/posts/${id}`} key={id}>
               <li className={utilStyles.listItem} key={id}>
                 {title}
                 <br />
