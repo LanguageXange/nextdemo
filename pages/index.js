@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Layout, { siteTitle } from "./components/layout";
 import { getSortedPostsData } from "../lib/blogpost";
+import Date from "./components/dates";
 export default function Home({ postData }) {
   return (
     <Layout home>
@@ -24,11 +25,11 @@ export default function Home({ postData }) {
           {postData.map(({ id, date, title }) => (
             <Link href={`http://localhost:3000/${id}`}>
               <li className={utilStyles.listItem} key={id}>
-                blog title: {title}
+                {title}
                 <br />
-                id: {id}
-                <br />
-                date: {date}
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
               </li>
             </Link>
           ))}
