@@ -16,14 +16,14 @@ export default function Home({ postData }) {
         <Link href="/about" className={styles.title}>
           About
         </Link>
-        <a href="http://localhost:3000/about">browser refresh</a>
+        <a href="/about">browser refresh</a>
       </main>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {postData.map(({ id, date, title }) => (
-            <Link href={`http://localhost:3000/posts/${id}`} key={id}>
+            <Link href={`/posts/${id}`} key={id}>
               <li className={utilStyles.listItem} key={id}>
                 {title}
                 <br />
