@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Layout from "../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/blogpost";
 import Head from "next/head";
@@ -5,7 +6,8 @@ import Head from "next/head";
 import utilStyle from "../../styles/utils.module.css";
 export default function Post({ postData }) {
   // postData is an object return from the function getPostData which takes an id
-
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <Layout>
       <Head>

@@ -3,37 +3,40 @@ import styles from "../styles/Home.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Layout, { siteTitle } from "./components/layout";
+
 import { getSortedPostsData } from "../lib/blogpost";
 //import Date from "./components/dates";
 export default function Home({ postData }) {
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+    <>
+      <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
 
-      <main className={styles.main}>
-        <Link href="/about" className={styles.title}>
-          About
-        </Link>
-        <a href="/about">browser refresh</a>
-      </main>
+        <main className={styles.main}>
+          <Link href="/about" className={styles.title}>
+            About
+          </Link>
+          <a href="/about">browser refresh</a>
+        </main>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {postData.map(({ id, date, title }) => (
-            <Link href={`/posts/${id}`} key={id}>
-              <li className={utilStyles.listItem} key={id}>
-                {title}
-                <br />
-                <small className={utilStyles.lightText}>{date}</small>
-              </li>
-            </Link>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+          <h2 className={utilStyles.headingLg}>Blog</h2>
+          <ul className={utilStyles.list}>
+            {postData.map(({ id, date, title }) => (
+              <Link href={`/posts/${id}`} key={id}>
+                <li className={utilStyles.listItem} key={id}>
+                  {title}
+                  <br />
+                  <small className={utilStyles.lightText}>{date}</small>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </section>
+      </Layout>
+    </>
   );
 }
 
